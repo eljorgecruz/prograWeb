@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/style.css" type="text/css" rel="stylesheet" />
+    <title>Person</title>
+</head>
+<body>
+    <h1>Hola desde el EJS</h1>
+
+    <!-- Creamos un funcion que nos dice si un numero es par o impar -->
+    <%  function esPar(num) {
+      res = num % 2 === 0;
+      if (res) {
+        return "par";
+      } else {
+        return "impar";
+      }
+    } %>
+
+    <!-- Pasamos el enunciado que se mostrara por pantalla y el numero que se va a evaluar con nuestra funcion -->
+    <h1>El numero <%= ID %> es <%= esPar(ID) %> </h1>
+
+    <ul>
+        
+    <!-- Creamos un ciclo for que nos imprima los numeros del 1 al numero que se le pase por la URL -->
+    <% for(let i=1; i<= ID;  i++) { %>
+        <li> <%= i %> </li>
+    <% } %>
+
+    </ul>
+</body>
+</html>
