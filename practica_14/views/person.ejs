@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/style.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Person Name: <%= ID %></h1>
+
+    <%
+
+    <!-- Con este switch verifico que el valor de message sea uno de los valores indicados (Hola, Bienvenido, Adios) -->
+    switch (Message) {
+      case 'Hola': %>
+        <h2>Mensaje: <%= Message %></h2>
+      <% break; 
+      case 'Bienvenido': %>
+        <h2>Mensaje: <%= Message %></h2>
+      <% break; 
+      case 'Adios': %>
+        <h2>Mensaje: <%= Message %></h2>
+      <% break; 
+       
+    }
+
+    <!-- Con este if verifico que el valor de times exista y si es asi imprimo el mensaje la -->
+    <!-- cantidad de veces que se indique en el valor times -->
+    <!-- si no es asi le pide al usuario que ingrese un numero al valor times -->
+    if(Number(Times)){
+        for(var i = 0; i < Number(Times); i++) { %>
+          <span> <%= Message %> <%= ID %> </span><br>
+        <% }   
+    }else{%>
+        <h3>Ingrese un numero al valor times</h3>
+    <%}%>
+
+
+
+
+</body>
+</html>
