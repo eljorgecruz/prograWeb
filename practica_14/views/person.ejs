@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/style.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/style.css" type="text/css" rel="stylesheet" />
     <title>Document</title>
 </head>
 <body>
@@ -22,8 +22,10 @@
       <% break; 
       case 'Adios': %>
         <h2>Mensaje: <%= Message %></h2>
-      <% break; 
-       
+      <% break;
+      default: %>
+        <h2>El mensaje no es valido prueba con: Hola, Bienvenido o Adios</h2>
+      <% break;
     }
 
     <!-- Con este if verifico que el valor de times exista y si es asi imprimo el mensaje la -->
