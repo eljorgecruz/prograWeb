@@ -1,17 +1,18 @@
-let express = require('express');
+const express = require('express');
 //inyectamos el modulo express
-let app = express();
+const app = express();
 // app que hace la funcion de servidor
-let personsRoute = require('./routes/person');
+const personsRoute = require('./routes/person');
 // incluimos el router que viene de personas
 
 app.set('view engine', 'ejs');
 app.use(personsRoute);
-app.use('/assets', express.static('__dirname + /public'));
+//app.use(studentRoute);
+//app.use('/assets', express.static(__dirname + '/public'));
 
-let PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 //definimos el puerto de escucha
 
 app.listen(PORT, () => {
-    console.log('escuchando en el puerto 3000');
+    console.log('Escuchando en el puerto 3000');
 });
