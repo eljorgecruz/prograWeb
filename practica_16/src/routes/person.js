@@ -2,20 +2,16 @@ const express = require('express');
 const router = express.Router();
 // intanciacion del "router" al que asociaremos todas las rutas
 
-//router.set('views', path.join(__dirname, 'views'));
-
-// router.get('/', (req, res) => {
-//     res.send('Este es el archivo person');
-// });
+// Definimos las rutas
+// ahora las rutas se definen con router y no con app como parte del refactor
+// usando router podemos definir rutas para un mismo archivo
+router.get('/', (req, res) => {
+    res.send('Este es el archivo person con respuesta de tipo send');
+});
 
 router.get('/person', (req, res) => {
     res.render('person')
 });
 
-// router.get('/student', function(req, res) {
-//     let t=req.params.id;
-//     res.render('student');// Renderizamos la vista student que es un formulario que nos permite ingresar datos
-//     // porque utlizamos las propiedades de express para parsear el body podemos acceder a los datos del formulario
-// });
 
 module.exports = router;
