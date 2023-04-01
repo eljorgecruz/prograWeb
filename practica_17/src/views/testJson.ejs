@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/style.css" type="text/css" rel="stylesheet" />
+    <title>Json</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+            integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+            crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <h1>Prueba de llamada a JQuery</h1>
+    <script>
+        // pasamos el objeto que contiene la informacion que necesitamos que llegue al endpoint
+        $.ajax({
+            type: "POST",
+            url: "personJson",
+            data:JSON.stringify({nombre:'Juan', apellido:'Parra'}),
+            dataType: 'json',
+            contentType: 'application/json',
+        });
+    </script>
+    
+</body>
+</html>
