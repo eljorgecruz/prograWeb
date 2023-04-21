@@ -3,6 +3,8 @@ const router = express.Router();
 const mongoose = require('mongoose');
 let Person = require('../models/persons');
 
+
+// creamos nuestra ruta para guardar personas
 router.get('/gente', async (req, res) => {
      const Persons = await Person.find({});
      res.json(Persons);
