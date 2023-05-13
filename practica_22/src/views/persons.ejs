@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personas</title>
+    <link rel="stylesheet"  href="/assets/styles.css">
+</head>
+<body>
+    <h1>Personas:</h1>
+    <main>
+        <table>
+            <tr>
+                <th>NSS</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Tipo de sangre</th>
+                <th></th>
+            </tr>
+        <% Object.keys(Persons).forEach(function(prop){ %>
+
+            <tr>
+                <td><%- Persons[prop].nss %></td>
+                <td><%- Persons[prop].nombre %></td>
+                <td><%- Persons[prop].edad %></td>
+                <td><%- Persons[prop].tipoSangre %></td>
+                <!-- El boton eliminar tiene una confirmacion para evitar que se elimine un registro por error -->
+                <td><a href="<%= `deletePerson/${Persons[prop]._id}` %>" onclick="return confirm('¿Está seguro que desea eliminar este documento?')">Delete</a></td>
+                <td><a href="<%= `findById/${Persons[prop]._id}` %>">Update</a></td>
+
+              </tr>
+          <% }); %>
+            
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        Total de Registros: <b><%= Object.keys(Persons).length %></b>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="add-btn-container">
+            <a href="./addPerson">Agregar</a>
+        </div>
+    </main>
+</body>
+</html>
