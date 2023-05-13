@@ -56,8 +56,6 @@ router.post('/updatePerson', async (req, res) => {
     .catch((error)=>{res.json({message:error})}); // si algo sale mal mostramos el error en pantalla
 });
 
-
-
 // creamos la ruta que invoca el metodo findByIdAndDelete para eliminar una persona por su id
 // despues que el boton salte la alerta de confirmacion de eliminacion
 router.get('/deletePerson/:id', async (req, res) => {
